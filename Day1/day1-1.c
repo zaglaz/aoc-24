@@ -39,7 +39,7 @@ int main(){
     qsort(left_vals, sizeof(left_vals)/sizeof(left_vals[0]), sizeof(int), comp);
     qsort(right_vals, sizeof(right_vals)/sizeof(right_vals[0]), sizeof(int), comp);
 
-    for (int i=0; i<1000; ++i) {
+    for (int i=0; i<sizeof(left_vals)/sizeof(left_vals[0]); ++i) {
         total_distance += abs(left_vals[i] - right_vals[i]);
     }
 
