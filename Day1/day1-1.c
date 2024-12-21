@@ -2,6 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 
+//Comparator for quicksort
+int comp(const void* a, const void* b) {
+    return (*(int*)a - *(int*)b);
+}
+
 int main(){
 
     FILE *list_file;
@@ -29,6 +34,15 @@ int main(){
         right_vals[count] = atoi(right_column);
         ++count;
     }
+
+    //Quicksorted value arrays
+    qsort(left_vals, sizeof(left_vals)/sizeof(left_vals[0]), sizeof(int), comp);
+    qsort(right_vals, sizeof(right_vals)/sizeof(right_vals[0]), sizeof(int), comp);
+
+    for (int i=0; i<1000; ++i) {
+        total_distance += abs(left_vals[i] - right_vals[i]);
+    }
+
     printf("%d", total_distance);
     fclose(list_file);
     return 0;
