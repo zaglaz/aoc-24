@@ -3,14 +3,14 @@
 #include <stdlib.h>
 
 //Comparator for quicksort
-int comp(const void* a, const void* b) {
+int comp(const void* a, const void* b){
     return (*(int*)a - *(int*)b);
 }
 
 int main(){
 
     FILE *list_file;
-    list_file = fopen("day1_list.txt", "r");
+    list_file = fopen("day1.txt", "r");
     char buffer[25];
     
     if (list_file == NULL){
