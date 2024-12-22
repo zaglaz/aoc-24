@@ -10,7 +10,7 @@ int main(){
     if (datafile == NULL) {
         return 1;
     }
-    int sum = 0;
+    
     //report traversal by line
     while (fgets(buffer, sizeof(buffer), datafile) != NULL){
         int inc_factor = 0;
